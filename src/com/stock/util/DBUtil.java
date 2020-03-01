@@ -6,10 +6,10 @@ import java.sql.SQLException;
 
 public class DBUtil {
 	private String driver = "oracle.jdbc.driver.OracleDriver";
-	private String url = "jdbc:oracle:thin:@127.0.0.1:1521:ORCL";
+	private String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
 //	private String url = "jdbc:oracle:thin:@192.168.56.1:1521:ORCL";
-	private String user = "ps";
-	private String psw = "ps";
+	private String user = "system";
+	private String psw = "oracle";
 	private Connection con = null;
 
 	public Connection getConnection() {

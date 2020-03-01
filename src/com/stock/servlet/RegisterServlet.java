@@ -18,13 +18,15 @@ public class RegisterServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
+	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+			throws IOException {
 		doPost(request, response);
 	}
 
+	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+			throws IOException {
 		response.setContentType("text/html;charset=GBK");
 		PrintWriter out = response.getWriter();
 		String userid = request.getParameter("userid");
@@ -43,9 +45,10 @@ public class RegisterServlet extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		if (n == 0)
+		if (n == 0) {
 			out.print("<script>alert('注册失败，可能您的输入有误或用户账号已经存在！');location.href='register.jsp';</script>");
-		else
+		} else {
 			out.print("<script>alert('恭喜你，注册成功！');location.href='login.jsp';</script>");
+		}
 	}
 }
